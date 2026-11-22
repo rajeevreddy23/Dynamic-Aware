@@ -1,0 +1,36 @@
+name: edge64
+num_servers: 64
+arrival_rate: 0.6
+time_limit: 1024.0
+max_decision_steps: 1024
+max_tasks_per_episode: 32
+servers:
+  homogenous: false
+  groups:
+    - count: 16
+      speed: 1.6
+      power_idle_watts: 90.0
+      power_busy_watts: 300.0
+      tier: edge
+    - count: 16
+      speed: 1.2
+      power_idle_watts: 80.0
+      power_busy_watts: 260.0
+      tier: edge
+    - count: 16
+      speed: 0.8
+      power_idle_watts: 75.0
+      power_busy_watts: 220.0
+      tier: edge
+    - count: 16
+      speed: 0.4
+      power_idle_watts: 60.0
+      power_busy_watts: 180.0
+      tier: edge
+queue:
+  top_l: 8
+  c_distribution: [0.25, 0.25, 0.25, 0.25]
+init_delay:
+  cold_start_s: 30.0
+  reconfig_s: 1.76
+  reuse_s: 0.0

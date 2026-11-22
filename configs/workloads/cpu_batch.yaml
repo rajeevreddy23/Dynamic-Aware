@@ -1,0 +1,12 @@
+name: cpu_batch
+type: CPU_Batch
+work_units: 30.0 # seconds of base batch work
+parallel_efficiency:
+  1: 1.00
+  2: 1.70
+  4: 2.10
+  8: 2.30
+quality_value: 1.0
+default_c_distribution: [0.7, 0.3, 0.0, 0.0]
+priority_distribution: [0.7, 0.2, 0.1] # mostly low priority
+deadline_slack_range_s: [60.0, 180.0]

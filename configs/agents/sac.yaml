@@ -1,0 +1,16 @@
+name: SAC
+type: standard_sac
+actor:
+  hidden_dim: 256
+  activation: mish
+critics:
+  num_critics: 2
+  hidden_dim: 256
+  activation: mish
+training:
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  tau: 0.005
+  gamma: 0.95
+  batch_size: 512
+  replay_size: 1000000

@@ -1,0 +1,16 @@
+name: video_analytics
+type: Video_Analytics
+work_units: 15.0 # seconds of base work per stream
+parallel_efficiency:
+  1: 1.00
+  2: 1.65
+  4: 2.20
+  8: 2.90
+fps_range: [10, 30]
+quality_model:
+  type: linear_fps
+  min_fps: 10
+  max_fps: 30
+default_c_distribution: [0.1, 0.4, 0.4, 0.1]
+priority_distribution: [0.3, 0.4, 0.3]
+deadline_slack_range_s: [20.0, 60.0]

@@ -1,0 +1,16 @@
+name: aigc_sd
+type: AIGC
+base_step_time_s: 0.474 # 23.7s / 50 steps for 1 patch
+parallel_speedup:
+  1: 1.00
+  2: 1.59
+  3: 1.75
+  4: 1.91
+  8: 2.45
+step_range: [20, 60]
+quality_model:
+  type: saturating
+  q_max: 0.85
+  tau_q: 18.0
+  noise_std: 0.015
+default_c_distribution: [0.25, 0.25, 0.25, 0.25]

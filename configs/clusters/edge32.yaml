@@ -1,0 +1,19 @@
+name: edge32
+num_servers: 32
+arrival_rate: 0.3
+time_limit: 1024.0
+max_decision_steps: 1024
+max_tasks_per_episode: 32
+servers:
+  homogenous: true
+  speed: 1.0
+  power_idle_watts: 80.0
+  power_busy_watts: 250.0
+  tier: edge
+queue:
+  top_l: 8
+  c_distribution: [0.25, 0.25, 0.25, 0.25] # for c in {1, 2, 4, 8}
+init_delay:
+  cold_start_s: 30.0
+  reconfig_s: 1.76
+  reuse_s: 0.0

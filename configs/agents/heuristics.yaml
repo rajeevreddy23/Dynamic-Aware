@@ -1,0 +1,11 @@
+heuristics:
+  fifo:
+    fixed_steps: 40
+  greedy:
+    step_candidates: [20, 40, 60]
+  random:
+    step_range: [20, 60]
+  edf:
+    fixed_steps: 40
+  priority_fifo:
+    fixed_steps: 40

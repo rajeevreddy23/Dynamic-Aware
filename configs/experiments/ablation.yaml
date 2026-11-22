@@ -1,0 +1,12 @@
+name: ablation_experiment
+mode: paper_mode
+cluster: edge32
+variants:
+  - EAT          # Full model: Cross-Attention + DDIM (learnable eta)
+  - EAT_D        # Cross-Attention only (DDIM removed)
+  - EAT_CA       # DDIM only (Cross-Attention replaced by MLP)
+  - D2SAC        # DDPM + SAC
+  - D2SAC_SA     # DDPM + SAC + Self-Attention
+  - SAC          # Standard SAC
+seeds: [42, 43, 44, 45, 46]
+budget: medium

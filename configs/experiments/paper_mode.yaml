@@ -1,0 +1,18 @@
+name: paper_mode_experiment
+mode: paper_mode
+clusters: [edge32, edge48, edge64]
+schedulers: [EAT, DPPO, D2SAC, SAC, PPO, TD3, DDPG, Greedy, FIFO, Random]
+arrival_rates:
+  edge32: [0.2, 0.3, 0.4]
+  edge48: [0.35, 0.45, 0.55]
+  edge64: [0.5, 0.6, 0.7]
+w_q_values: [0.4, 0.5, 0.6]
+seeds: [42, 43, 44, 45, 46]
+eval_episodes: 5
+training:
+  gamma: 0.95
+  batch_size: 512
+  replay_size: 1000000
+  smoke_steps: 20000
+  medium_steps: 200000
+  full_steps: 1000000

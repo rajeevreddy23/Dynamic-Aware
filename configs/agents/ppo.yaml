@@ -1,0 +1,11 @@
+name: PPO
+type: on_policy_ppo
+policy:
+  hidden_dim: 256
+  activation: mish
+training:
+  lr: 0.0003
+  gamma: 0.95
+  clip_ratio: 0.2
+  rollout_steps: 2048
+  batch_size: 64

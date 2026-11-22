@@ -1,0 +1,13 @@
+name: DDPG
+type: deep_deterministic_policy_gradient
+actor:
+  hidden_dim: 256
+  activation: mish
+critic:
+  hidden_dim: 256
+  activation: mish
+training:
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  gamma: 0.95
+  tau: 0.005

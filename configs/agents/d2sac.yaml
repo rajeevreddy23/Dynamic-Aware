@@ -1,0 +1,23 @@
+name: D2SAC
+type: diffusion_sac
+d_emb: 8
+denoiser:
+  hidden_dim: 256
+  activation: mish
+  output_dim: 3
+  time_emb_dim: 8
+diffusion:
+  type: ddpm
+  steps: 10
+critics:
+  num_critics: 2
+  hidden_dim: 256
+  activation: mish
+training:
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  weight_decay: 0.0001
+  tau: 0.005
+  gamma: 0.95
+  batch_size: 512
+  replay_size: 1000000

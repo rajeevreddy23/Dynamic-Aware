@@ -1,0 +1,14 @@
+name: DPPO
+type: diffusion_ppo
+d_emb: 8
+denoiser:
+  hidden_dim: 256
+  activation: mish
+  output_dim: 3
+  time_emb_dim: 8
+diffusion:
+  steps: 4
+training:
+  lr: 0.0003
+  gamma: 0.95
+  clip_ratio: 0.2

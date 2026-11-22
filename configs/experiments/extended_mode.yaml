@@ -1,0 +1,23 @@
+name: extended_mode_experiment
+mode: extended_mode
+clusters: [cloud_edge, edge48]
+schedulers: [EAT, EDF, Priority_FIFO, Greedy, Random]
+workload_mix:
+  aigc_sd: 0.4
+  ml_inference: 0.3
+  video_analytics: 0.2
+  cpu_batch: 0.1
+weights:
+  w_q: 0.5
+  w_t1: 0.3
+  w_t2: 0.2
+  w_dl: 0.5 # deadline miss penalty weight
+  w_e: 0.1  # energy penalty weight
+seeds: [42, 43, 44, 45, 46]
+adaptation_test:
+  enable: true
+  burst_factor: 2.0
+  burst_start_s: 300
+  burst_duration_s: 200
+  server_failure_count: 8
+  server_failure_start_s: 500

@@ -1,0 +1,12 @@
+name: ml_inference
+type: ML_Inference
+work_units: 5.0 # seconds of baseline work
+parallel_efficiency:
+  1: 1.00
+  2: 1.80
+  4: 3.20
+  8: 4.80
+default_c_distribution: [0.5, 0.3, 0.2, 0.0]
+quality_value: 1.0
+priority_distribution: [0.2, 0.5, 0.3]
+deadline_slack_range_s: [10.0, 30.0]
