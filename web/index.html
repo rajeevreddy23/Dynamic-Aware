@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EAT-Sched: Cloud-Edge Task Scheduling Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-reuse: #10b981;
+      --accent-reconfig: #3b82f6;
+      --accent-cold: #f97316;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .title h1 { font-size: 24px; font-weight: 700; color: #fff; }
+    .title p { font-size: 14px; color: var(--text-muted); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .badge-live { background-color: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #059669; }
+    .badge-static { background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid #d97706; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+
+    .controls-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-end;
+    }
+    .control-group { display: flex; flex-direction: column; gap: 6px; }
+    .control-group label { font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); }
+    .control-group select, .control-group input {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      min-width: 140px;
+    }
+    button.btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    button.btn-primary:hover { background: var(--primary-hover); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .metric-card .label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .metric-card .val { font-size: 24px; font-weight: 700; margin-top: 4px; color: #fff; }
+    .metric-card .sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .section h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
+
+    .legend { display: flex; gap: 16px; font-size: 12px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .color-box { width: 12px; height: 12px; border-radius: 3px; }
+
+    /* Gantt chart canvas */
+    .gantt-container {
+      width: 100%;
+      height: 340px;
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      position: relative;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    canvas { display: block; width: 100%; height: 100%; }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    table.data-table th, table.data-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+    table.data-table th { background: #162032; color: var(--text-muted); font-weight: 600; }
+    table.data-table tr:hover { background: #243248; }
+
+    .tab-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .tab-btn.active { background: #334155; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">
+      <h1>EAT-Sched: Cloud-Edge Task Scheduling</h1>
+      <p>Discrete-Event RL Scheduling via Attention-Guided Diffusion Policy (IEEE TMC 2026 / MBU Capstone)</p>
+    </div>
+    <div id="statusBadge" class="badge badge-static">
+      <span class="badge-dot"></span>
+      <span id="statusText">Checking API...</span>
+    </div>
+  </div>
+
+  <div class="controls-card">
+    <div class="control-group">
+      <label>Mode</label>
+      <select id="modeSelect">
+        <option value="paper_mode">Paper Mode (IEEE TMC 2026)</option>
+        <option value="extended_mode">Extended Mode (Capstone QoS)</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Scheduler</label>
+      <select id="schedulerSelect">
+        <option value="EAT" selected>EAT (Ours - Diffusion RL)</option>
+        <option value="Greedy">Greedy (Alg. 1 Baseline)</option>
+        <option value="FIFO">FIFO Baseline</option>
+        <option value="Random">Random Baseline</option>
+        <option value="EDF">EDF (Deadline First)</option>
+        <option value="Priority_FIFO">Priority-FIFO</option>
+        <option value="SAC">SAC</option>
+        <option value="PPO">PPO</option>
+        <option value="TD3">TD3</option>
+        <option value="DDPG">DDPG</option>
+        <option value="DPPO">DPPO</option>
+        <option value="D2SAC">D2SAC</option>
+        <option value="EAT_D">Ablation: EAT-D (No DDIM)</option>
+        <option value="EAT_CA">Ablation: EAT-CA (No Cross-Attn)</option>
+        <option value="D2SAC_SA">Ablation: D2SAC+SA</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Cluster</label>
+      <select id="clusterSelect">
+        <option value="edge32">edge32 (32 Servers, λ=0.3)</option>
+        <option value="edge48">edge48 (48 Heterogeneous, λ=0.45)</option>
+        <option value="edge64">edge64 (64 Heterogeneous, λ=0.6)</option>
+        <option value="cloud_edge">cloud_edge (32 Edge + 16 Cloud, λ=0.7)</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Random Seed</label>
+      <input type="number" id="seedInput" value="42" style="width: 80px;">
+    </div>
+    <button class="btn-primary" id="runBtn" onclick="runSimulation()">Run Simulation</button>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="label">Avg Response Time</div>
+      <div class="val" id="metricResp">-- s</div>
+      <div class="sub">Total end-to-end latency</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Avg Queue Wait</div>
+      <div class="val" id="metricWait">-- s</div>
+      <div class="sub">Queue pending delay</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Avg Init Delay</div>
+      <div class="val" id="metricInit">-- s</div>
+      <div class="sub">Model loading / NCCL setup</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Process Reuse Rate</div>
+      <div class="val" id="metricReuse">-- %</div>
+      <div class="sub">Zero-delay group reuses</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Output Quality</div>
+      <div class="val" id="metricQual">--</div>
+      <div class="sub">Normalized CLIP score</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">System Utility U</div>
+      <div class="val" id="metricUtil" style="color: #818cf8;">--</div>
+      <div class="sub">Quality vs. Latency Trade-off</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>
+      <span>Discrete-Event Gantt Timeline</span>
+      <div class="legend">
+        <div class="legend-item"><div class="color-box" style="background: var(--accent-reuse);"></div> Process Reuse (0.0s)</div>
+        <div class="legend-item"><div class="color-box" style="background: var(--accent-reconfig);"></div> In-Memory Reconfig (1.76s)</div>
+        <div class="legend-item"><div class="color-box" style="background: var(--accent-cold);"></div> Cold Start (30.0s)</div>
+      </div>
+    </h2>
+    <div class="gantt-container">
+      <canvas id="ganttCanvas"></canvas>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('comparison')">Scheduler Benchmark Comparison</button>
+      <button class="tab-btn" onclick="switchTab('learning')">Learning Curves (Training Convergence)</button>
+    </div>
+
+    <div id="comparisonTab">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Scheduler</th>
+            <th>Avg Response (s)</th>
+            <th>Avg Wait (s)</th>
+            <th>Init Delay (s)</th>
+            <th>Reuse Rate</th>
+            <th>Avg Quality</th>
+            <th>Utility U</th>
+          </tr>
+        </thead>
+        <tbody id="comparisonTableBody">
+          <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading evaluation benchmarks...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="learningTab" style="display: none;">
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">
+        Training reward curves recorded across 20,000 to 1,000,000 environment steps.
+      </p>
+      <div id="learningCurveContainer" style="width: 100%; height: 260px; background: #090d16; border-radius: 8px; padding: 16px;">
+        <canvas id="learningCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let isLiveApi = false;
+    let currentTimeline = [];
+
+    async function checkApiHealth() {
+      try {
+        const res = await fetch("http://localhost:8000/health", { method: "GET" });
+        if (res.ok) {
+          const data = await res.json();
+          isLiveApi = true;
+          document.getElementById("statusBadge").className = "badge badge-live";
+          document.getElementById("statusText").innerText = `Live API Connected (${data.device.toUpperCase()})`;
+          return;
+        }
+      } catch (e) {
+        // Fall back to static results mode
+      }
+      isLiveApi = false;
+      document.getElementById("statusBadge").className = "badge badge-static";
+      document.getElementById("statusText").innerText = "Static Results Mode (Saved Artifacts)";
+    }
+
+    async function loadInitialData() {
+      await checkApiHealth();
+      await loadBenchmarks();
+      runSimulation();
+    }
+
+    async function runSimulation() {
+      const mode = document.getElementById("modeSelect").value;
+      const scheduler = document.getElementById("schedulerSelect").value;
+      const cluster = document.getElementById("clusterSelect").value;
+      const seed = parseInt(document.getElementById("seedInput").value) || 42;
+
+      document.getElementById("runBtn").innerText = "Simulating...";
+      document.getElementById("runBtn").disabled = true;
+
+      try {
+        if (isLiveApi) {
+          const res = await fetch("http://localhost:8000/simulate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ scheduler, cluster, mode, seed })
+          });
+          if (res.ok) {
+            const data = await res.json();
+            renderMetrics(data.metrics);
+            currentTimeline = data.timeline;
+            renderGantt(data.timeline);
+            document.getElementById("runBtn").innerText = "Run Simulation";
+            document.getElementById("runBtn").disabled = false;
+            return;
+          }
+        }
+
+        // Static results mode fallback: fetch from static results endpoint
+        const staticRes = await fetch("/api/static-results");
+        if (staticRes.ok) {
+          const sData = await staticRes.json();
+          const targetKey = `eval_${mode}_${cluster}.json`;
+          if (sData.results && sData.results[targetKey] && sData.results[targetKey][scheduler]) {
+            const schedData = sData.results[targetKey][scheduler].raw;
+            renderMetrics({
+              avg_response_time_s: schedData.avg_response_s,
+              avg_waiting_time_s: schedData.avg_wait_s,
+              avg_init_delay_s: schedData.avg_init_s,
+              reuse_rate: schedData.reuse_rate,
+              avg_quality: schedData.avg_quality,
+              utility: schedData.utility,
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Simulation error:", err);
+      }
+      document.getElementById("runBtn").innerText = "Run Simulation";
+      document.getElementById("runBtn").disabled = false;
+    }
+
+    function renderMetrics(m) {
+      if (!m) return;
+      document.getElementById("metricResp").innerText = (m.avg_response_time_s || 0).toFixed(2) + " s";
+      document.getElementById("metricWait").innerText = (m.avg_waiting_time_s || 0).toFixed(2) + " s";
+      document.getElementById("metricInit").innerText = (m.avg_init_delay_s || 0).toFixed(2) + " s";
+      document.getElementById("metricReuse").innerText = ((m.reuse_rate || 0) * 100).toFixed(1) + " %";
+      document.getElementById("metricQual").innerText = (m.avg_quality || 0).toFixed(3);
+      document.getElementById("metricUtil").innerText = (m.utility || 0).toFixed(3);
+    }
+
+    function renderGantt(events) {
+      const canvas = document.getElementById("ganttCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (!events || events.length === 0) {
+        ctx.fillStyle = "#64748b";
+        ctx.font = "14px sans-serif";
+        ctx.fillText("No timeline events generated.", 20, 40);
+        return;
+      }
+
+      const maxTime = Math.max(...events.map(e => e.completion_time)) || 200;
+      const numServers = 32;
+      const rowHeight = (canvas.height - 30) / numServers;
+
+      // Draw time axis grid
+      ctx.strokeStyle = "#1e293b";
+      ctx.lineWidth = 1;
+      for (let t = 0; t <= maxTime; t += 20) {
+        const x = (t / maxTime) * (canvas.width - 60) + 40;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height - 20);
+        ctx.stroke();
+        ctx.fillStyle = "#64748b";
+        ctx.font = "10px sans-serif";
+        ctx.fillText(t + "s", x - 10, canvas.height - 5);
+      }
+
+      // Draw events
+      events.forEach(ev => {
+        const startX = (ev.start_time / maxTime) * (canvas.width - 60) + 40;
+        const initW = (ev.init_delay / maxTime) * (canvas.width - 60);
+        const execW = (ev.exec_time / maxTime) * (canvas.width - 60);
+
+        let color = "#10b981"; // reuse
+        if (ev.reuse_type === "cold_start") color = "#f97316";
+        if (ev.reuse_type === "reconfig") color = "#3b82f6";
+
+        ev.servers.forEach(srvId => {
+          const y = (srvId % numServers) * rowHeight + 2;
+
+          // Draw init delay bar if any
+          if (ev.init_delay > 0) {
+            ctx.fillStyle = color;
+            ctx.fillRect(startX, y, Math.max(2, initW), rowHeight - 4);
+          }
+          // Draw execution bar
+          ctx.fillStyle = "#818cf8";
+          ctx.fillRect(startX + initW, y, Math.max(2, execW), rowHeight - 4);
+        });
+      });
+    }
+
+    async function loadBenchmarks() {
+      try {
+        const res = await fetch("/api/static-results");
+        if (!res.ok) return;
+        const data = await res.json();
+        const evalKey = Object.keys(data.results).find(k => k.startsWith("eval_"));
+        if (!evalKey) return;
+        const scheds = data.results[evalKey];
+        const tbody = document.getElementById("comparisonTableBody");
+        tbody.innerHTML = "";
+
+        Object.keys(scheds).forEach(name => {
+          const item = scheds[name];
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td><strong>${name}</strong></td>
+            <td>${item.avg_response_time}</td>
+            <td>${item.avg_waiting_time}</td>
+            <td>${item.avg_init_delay}</td>
+            <td>${item.reuse_rate}</td>
+            <td>${item.avg_quality}</td>
+            <td style="color: #818cf8; font-weight: 600;">${item.utility}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        console.error("Failed to load benchmarks:", e);
+      }
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      event.target.classList.add("active");
+      if (tab === "comparison") {
+        document.getElementById("comparisonTab").style.display = "block";
+        document.getElementById("learningTab").style.display = "none";
+      } else {
+        document.getElementById("comparisonTab").style.display = "none";
+        document.getElementById("learningTab").style.display = "block";
+        renderLearningCurves();
+      }
+    }
+
+    async function renderLearningCurves() {
+      const canvas = document.getElementById("learningCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "12px sans-serif";
+      ctx.fillText("Convergence of Cumulative Episode Reward across training steps", 20, 20);
+
+      try {
+        const res = await fetch("/api/static-results");
+        if (!res.ok) return;
+        const data = await res.json();
+        const trainKey = Object.keys(data.results).find(k => k.startsWith("train_"));
+        if (!trainKey) {
+          ctx.fillText("Run make train-smoke to generate training curves.", 20, 60);
+          return;
+        }
+        const records = data.results[trainKey].records || [];
+        if (records.length === 0) return;
+
+        const maxStep = records[records.length - 1].step || 20000;
+        const minR = Math.min(...records.map(r => r.reward));
+        const maxR = Math.max(...records.map(r => r.reward));
+
+        ctx.strokeStyle = "#6366f1";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        records.forEach((r, idx) => {
+          const x = (r.step / maxStep) * (canvas.width - 60) + 40;
+          const y = canvas.height - 40 - ((r.avg_reward_10 - minR) / (maxR - minR + 1e-4)) * (canvas.height - 80);
+          if (idx === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    window.onload = loadInitialData;
+  </script>
+</body>
+</html>

@@ -49,7 +49,12 @@ def test_workload_configs():
     """Verify workload profile configuration files."""
     root = get_project_root()
     workload_dir = root / "configs" / "workloads"
-    expected_workloads = ["aigc_sd.yaml", "ml_inference.yaml", "video_analytics.yaml", "cpu_batch.yaml"]
+    expected_workloads = [
+        "aigc_sd.yaml",
+        "ml_inference.yaml",
+        "video_analytics.yaml",
+        "cpu_batch.yaml",
+    ]
     for filename in expected_workloads:
         filepath = workload_dir / filename
         assert filepath.exists(), f"Workload config {filename} missing"
@@ -83,4 +88,5 @@ def test_package_imports():
     """Verify eatsched root and subpackages import correctly."""
     import eatsched
     import eatsched.utils.config
+
     assert eatsched.__version__ == "0.1.0"
