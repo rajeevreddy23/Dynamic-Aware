@@ -1,0 +1,24 @@
+services:
+  # Backend API service on Render
+  - type: web
+    name: eatsched-api
+    env: python
+    plan: free
+    buildCommand: pip install -e .
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DEVICE
+        value: cpu
+
+  # Web Dashboard service on Render
+  - type: web
+    name: eatsched-web
+    env: node
+    plan: free
+    buildCommand: cd web && npm run build
+    startCommand: cd web && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.18.0

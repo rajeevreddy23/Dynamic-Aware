@@ -4,7 +4,9 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
-const RESULTS_DIR = path.join(ROOT_DIR, '..', 'results');
+const RESULTS_DIR = fs.existsSync(path.join(ROOT_DIR, '..', 'results'))
+  ? path.join(ROOT_DIR, '..', 'results')
+  : path.join(ROOT_DIR, 'results');
 
 const server = http.createServer((req, res) => {
   // CORS headers

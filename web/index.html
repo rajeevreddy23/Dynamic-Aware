@@ -166,7 +166,7 @@
       <h1>EAT-Sched: Cloud-Edge Task Scheduling</h1>
       <p>Discrete-Event RL Scheduling via Attention-Guided Diffusion Policy (IEEE TMC 2026 / MBU Capstone)</p>
     </div>
-    <div id="statusBadge" class="badge badge-static">
+    <div id="statusBadge" class="badge badge-static" onclick="promptApiUrl()" style="cursor: pointer;" title="Click to configure backend API URL (e.g., Render URL)">
       <span class="badge-dot"></span>
       <span id="statusText">Checking API...</span>
     </div>
@@ -302,18 +302,43 @@
     let isLiveApi = false;
     let currentTimeline = [];
 
-    async function checkApiHealth() {
-      try {
-        const res = await fetch("http://localhost:8000/health", { method: "GET" });
-        if (res.ok) {
-          const data = await res.json();
-          isLiveApi = true;
-          document.getElementById("statusBadge").className = "badge badge-live";
-          document.getElementById("statusText").innerText = `Live API Connected (${data.device.toUpperCase()})`;
-          return;
+    function getApiUrl() {
+      const stored = localStorage.getItem("EATSCHED_API_URL");
+      if (stored) return stored;
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return "http://localhost:8000";
+      }
+      return "";
+    }
+
+    function promptApiUrl() {
+      const current = localStorage.getItem("EATSCHED_API_URL") || (isLiveApi ? getApiUrl() : "https://eatsched-api.onrender.com");
+      const entered = prompt("Enter backend API URL (e.g. https://eatsched-api.onrender.com or http://localhost:8000):", current);
+      if (entered !== null) {
+        if (entered.trim() === "") {
+          localStorage.removeItem("EATSCHED_API_URL");
+        } else {
+          localStorage.setItem("EATSCHED_API_URL", entered.trim().replace(/\/$/, ""));
         }
-      } catch (e) {
-        // Fall back to static results mode
+        location.reload();
+      }
+    }
+
+    async function checkApiHealth() {
+      const apiUrl = getApiUrl();
+      if (apiUrl) {
+        try {
+          const res = await fetch(`${apiUrl}/health`, { method: "GET" });
+          if (res.ok) {
+            const data = await res.json();
+            isLiveApi = true;
+            document.getElementById("statusBadge").className = "badge badge-live";
+            document.getElementById("statusText").innerText = `Live API Connected (${data.device.toUpperCase()})`;
+            return;
+          }
+        } catch (e) {
+          // Fall back to static results mode
+        }
       }
       isLiveApi = false;
       document.getElementById("statusBadge").className = "badge badge-static";
@@ -337,7 +362,8 @@
 
       try {
         if (isLiveApi) {
-          const res = await fetch("http://localhost:8000/simulate", {
+          const apiUrl = getApiUrl();
+          const res = await fetch(`${apiUrl}/simulate`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ scheduler, cluster, mode, seed })

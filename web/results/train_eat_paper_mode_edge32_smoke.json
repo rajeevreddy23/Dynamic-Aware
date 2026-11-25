@@ -1,0 +1,1766 @@
+{
+  "config": {
+    "mode": "paper_mode",
+    "cluster": "edge32",
+    "budget": "smoke",
+    "seed": 42
+  },
+  "total_time_s": 328.3134796619415,
+  "records": [
+    {
+      "step": 96,
+      "episode": 1,
+      "reward": 18.965,
+      "avg_reward_10": 18.965,
+      "eta": 0.5,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 191,
+      "episode": 2,
+      "reward": 17.551,
+      "avg_reward_10": 18.258,
+      "eta": 0.5,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 294,
+      "episode": 3,
+      "reward": 21.563,
+      "avg_reward_10": 19.36,
+      "eta": 0.5008,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 379,
+      "episode": 4,
+      "reward": 18.634,
+      "avg_reward_10": 19.178,
+      "eta": 0.5024,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 458,
+      "episode": 5,
+      "reward": 18.216,
+      "avg_reward_10": 18.986,
+      "eta": 0.504,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 564,
+      "episode": 6,
+      "reward": 20.792,
+      "avg_reward_10": 19.287,
+      "eta": 0.5062,
+      "critic_loss": 0.1539689302444458,
+      "actor_loss": -0.26833295822143555
+    },
+    {
+      "step": 652,
+      "episode": 7,
+      "reward": 18.712,
+      "avg_reward_10": 19.205,
+      "eta": 0.5079,
+      "critic_loss": 0.14936867356300354,
+      "actor_loss": -0.29735249280929565
+    },
+    {
+      "step": 758,
+      "episode": 8,
+      "reward": 15.587,
+      "avg_reward_10": 18.753,
+      "eta": 0.5099,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 862,
+      "episode": 9,
+      "reward": 20.108,
+      "avg_reward_10": 18.903,
+      "eta": 0.5119,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 970,
+      "episode": 10,
+      "reward": 23.563,
+      "avg_reward_10": 19.369,
+      "eta": 0.5139,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1089,
+      "episode": 11,
+      "reward": 24.826,
+      "avg_reward_10": 19.955,
+      "eta": 0.5161,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1215,
+      "episode": 12,
+      "reward": 23.47,
+      "avg_reward_10": 20.547,
+      "eta": 0.5184,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1315,
+      "episode": 13,
+      "reward": 18.898,
+      "avg_reward_10": 20.281,
+      "eta": 0.5202,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1410,
+      "episode": 14,
+      "reward": 16.704,
+      "avg_reward_10": 20.088,
+      "eta": 0.5219,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1525,
+      "episode": 15,
+      "reward": 24.034,
+      "avg_reward_10": 20.67,
+      "eta": 0.524,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1634,
+      "episode": 16,
+      "reward": 22.686,
+      "avg_reward_10": 20.859,
+      "eta": 0.526,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1739,
+      "episode": 17,
+      "reward": 23.973,
+      "avg_reward_10": 21.385,
+      "eta": 0.5279,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1842,
+      "episode": 18,
+      "reward": 14.763,
+      "avg_reward_10": 21.303,
+      "eta": 0.5297,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 1939,
+      "episode": 19,
+      "reward": 11.561,
+      "avg_reward_10": 20.448,
+      "eta": 0.5314,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2038,
+      "episode": 20,
+      "reward": 14.771,
+      "avg_reward_10": 19.569,
+      "eta": 0.5332,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2150,
+      "episode": 21,
+      "reward": 16.644,
+      "avg_reward_10": 18.75,
+      "eta": 0.5351,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2240,
+      "episode": 22,
+      "reward": 18.57,
+      "avg_reward_10": 18.26,
+      "eta": 0.5367,
+      "critic_loss": 0.22341662645339966,
+      "actor_loss": -1.270965337753296
+    },
+    {
+      "step": 2338,
+      "episode": 23,
+      "reward": 14.883,
+      "avg_reward_10": 17.859,
+      "eta": 0.5383,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2417,
+      "episode": 24,
+      "reward": 18.139,
+      "avg_reward_10": 18.002,
+      "eta": 0.5397,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2520,
+      "episode": 25,
+      "reward": 17.61,
+      "avg_reward_10": 17.36,
+      "eta": 0.5415,
+      "critic_loss": 0.23057174682617188,
+      "actor_loss": -1.7805901765823364
+    },
+    {
+      "step": 2613,
+      "episode": 26,
+      "reward": 22.153,
+      "avg_reward_10": 17.307,
+      "eta": 0.5431,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2701,
+      "episode": 27,
+      "reward": 15.879,
+      "avg_reward_10": 16.497,
+      "eta": 0.5446,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 2792,
+      "episode": 28,
+      "reward": 18.877,
+      "avg_reward_10": 16.909,
+      "eta": 0.5461,
+      "critic_loss": 0.726568877696991,
+      "actor_loss": -2.167904853820801
+    },
+    {
+      "step": 2907,
+      "episode": 29,
+      "reward": 24.51,
+      "avg_reward_10": 18.204,
+      "eta": 0.5479,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3005,
+      "episode": 30,
+      "reward": 18.13,
+      "avg_reward_10": 18.54,
+      "eta": 0.5496,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3104,
+      "episode": 31,
+      "reward": 13.27,
+      "avg_reward_10": 18.202,
+      "eta": 0.5513,
+      "critic_loss": 0.34925395250320435,
+      "actor_loss": -2.6718552112579346
+    },
+    {
+      "step": 3206,
+      "episode": 32,
+      "reward": 23.962,
+      "avg_reward_10": 18.741,
+      "eta": 0.553,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3304,
+      "episode": 33,
+      "reward": 20.762,
+      "avg_reward_10": 19.329,
+      "eta": 0.5548,
+      "critic_loss": 0.619027853012085,
+      "actor_loss": -2.599963426589966
+    },
+    {
+      "step": 3410,
+      "episode": 34,
+      "reward": 20.252,
+      "avg_reward_10": 19.54,
+      "eta": 0.5566,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3504,
+      "episode": 35,
+      "reward": 16.946,
+      "avg_reward_10": 19.474,
+      "eta": 0.5583,
+      "critic_loss": 0.526131272315979,
+      "actor_loss": -3.03452467918396
+    },
+    {
+      "step": 3603,
+      "episode": 36,
+      "reward": 16.703,
+      "avg_reward_10": 18.929,
+      "eta": 0.56,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3696,
+      "episode": 37,
+      "reward": 19.756,
+      "avg_reward_10": 19.317,
+      "eta": 0.5617,
+      "critic_loss": 0.9253382086753845,
+      "actor_loss": -3.1235814094543457
+    },
+    {
+      "step": 3825,
+      "episode": 38,
+      "reward": 19.768,
+      "avg_reward_10": 19.406,
+      "eta": 0.564,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 3923,
+      "episode": 39,
+      "reward": 18.323,
+      "avg_reward_10": 18.787,
+      "eta": 0.5657,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4016,
+      "episode": 40,
+      "reward": 15.824,
+      "avg_reward_10": 18.556,
+      "eta": 0.5674,
+      "critic_loss": 0.5632903575897217,
+      "actor_loss": -3.2282533645629883
+    },
+    {
+      "step": 4110,
+      "episode": 41,
+      "reward": 19.025,
+      "avg_reward_10": 19.132,
+      "eta": 0.5691,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4215,
+      "episode": 42,
+      "reward": 19.359,
+      "avg_reward_10": 18.672,
+      "eta": 0.5709,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4322,
+      "episode": 43,
+      "reward": 24.22,
+      "avg_reward_10": 19.018,
+      "eta": 0.5728,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4439,
+      "episode": 44,
+      "reward": 14.984,
+      "avg_reward_10": 18.491,
+      "eta": 0.5749,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4545,
+      "episode": 45,
+      "reward": 15.385,
+      "avg_reward_10": 18.335,
+      "eta": 0.5768,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4650,
+      "episode": 46,
+      "reward": 18.074,
+      "avg_reward_10": 18.472,
+      "eta": 0.5786,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4743,
+      "episode": 47,
+      "reward": 15.1,
+      "avg_reward_10": 18.006,
+      "eta": 0.5803,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4839,
+      "episode": 48,
+      "reward": 15.958,
+      "avg_reward_10": 17.625,
+      "eta": 0.582,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 4929,
+      "episode": 49,
+      "reward": 20.266,
+      "avg_reward_10": 17.819,
+      "eta": 0.5836,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5045,
+      "episode": 50,
+      "reward": 17.172,
+      "avg_reward_10": 17.954,
+      "eta": 0.5857,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5150,
+      "episode": 51,
+      "reward": 19.709,
+      "avg_reward_10": 18.023,
+      "eta": 0.5876,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5243,
+      "episode": 52,
+      "reward": 16.594,
+      "avg_reward_10": 17.746,
+      "eta": 0.5892,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5341,
+      "episode": 53,
+      "reward": 13.126,
+      "avg_reward_10": 16.637,
+      "eta": 0.5909,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5464,
+      "episode": 54,
+      "reward": 17.69,
+      "avg_reward_10": 16.908,
+      "eta": 0.5931,
+      "critic_loss": 0.5567848682403564,
+      "actor_loss": -3.752284288406372
+    },
+    {
+      "step": 5597,
+      "episode": 55,
+      "reward": 20.893,
+      "avg_reward_10": 17.458,
+      "eta": 0.5954,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5691,
+      "episode": 56,
+      "reward": 14.159,
+      "avg_reward_10": 17.067,
+      "eta": 0.597,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 5772,
+      "episode": 57,
+      "reward": 18.548,
+      "avg_reward_10": 17.412,
+      "eta": 0.5985,
+      "critic_loss": 0.39382219314575195,
+      "actor_loss": -4.100244998931885
+    },
+    {
+      "step": 5887,
+      "episode": 58,
+      "reward": 22.276,
+      "avg_reward_10": 18.043,
+      "eta": 0.6004,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6019,
+      "episode": 59,
+      "reward": 19.315,
+      "avg_reward_10": 17.948,
+      "eta": 0.6027,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6130,
+      "episode": 60,
+      "reward": 22.872,
+      "avg_reward_10": 18.518,
+      "eta": 0.6047,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6239,
+      "episode": 61,
+      "reward": 21.425,
+      "avg_reward_10": 18.69,
+      "eta": 0.6065,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6349,
+      "episode": 62,
+      "reward": 19.955,
+      "avg_reward_10": 19.026,
+      "eta": 0.6085,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6445,
+      "episode": 63,
+      "reward": 21.506,
+      "avg_reward_10": 19.864,
+      "eta": 0.6101,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6550,
+      "episode": 64,
+      "reward": 18.65,
+      "avg_reward_10": 19.96,
+      "eta": 0.6119,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6652,
+      "episode": 65,
+      "reward": 13.452,
+      "avg_reward_10": 19.216,
+      "eta": 0.6137,
+      "critic_loss": 0.3796515166759491,
+      "actor_loss": -3.7651207447052
+    },
+    {
+      "step": 6736,
+      "episode": 66,
+      "reward": 16.897,
+      "avg_reward_10": 19.489,
+      "eta": 0.6152,
+      "critic_loss": 0.5327168703079224,
+      "actor_loss": -3.6693716049194336
+    },
+    {
+      "step": 6834,
+      "episode": 67,
+      "reward": 15.834,
+      "avg_reward_10": 19.218,
+      "eta": 0.6168,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 6946,
+      "episode": 68,
+      "reward": 20.226,
+      "avg_reward_10": 19.013,
+      "eta": 0.6187,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7043,
+      "episode": 69,
+      "reward": 21.833,
+      "avg_reward_10": 19.265,
+      "eta": 0.6203,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7145,
+      "episode": 70,
+      "reward": 15.205,
+      "avg_reward_10": 18.498,
+      "eta": 0.6221,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7249,
+      "episode": 71,
+      "reward": 24.341,
+      "avg_reward_10": 18.79,
+      "eta": 0.6238,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7342,
+      "episode": 72,
+      "reward": 21.592,
+      "avg_reward_10": 18.954,
+      "eta": 0.6253,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7429,
+      "episode": 73,
+      "reward": 16.629,
+      "avg_reward_10": 18.466,
+      "eta": 0.6268,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7526,
+      "episode": 74,
+      "reward": 20.395,
+      "avg_reward_10": 18.64,
+      "eta": 0.6284,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7646,
+      "episode": 75,
+      "reward": 18.228,
+      "avg_reward_10": 19.118,
+      "eta": 0.6304,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7734,
+      "episode": 76,
+      "reward": 17.483,
+      "avg_reward_10": 19.177,
+      "eta": 0.6318,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 7832,
+      "episode": 77,
+      "reward": 20.153,
+      "avg_reward_10": 19.608,
+      "eta": 0.6335,
+      "critic_loss": 0.4772505462169647,
+      "actor_loss": -3.7856993675231934
+    },
+    {
+      "step": 7940,
+      "episode": 78,
+      "reward": 23.901,
+      "avg_reward_10": 19.976,
+      "eta": 0.6353,
+      "critic_loss": 0.458000510931015,
+      "actor_loss": -3.6276164054870605
+    },
+    {
+      "step": 8045,
+      "episode": 79,
+      "reward": 18.228,
+      "avg_reward_10": 19.615,
+      "eta": 0.6371,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8141,
+      "episode": 80,
+      "reward": 20.351,
+      "avg_reward_10": 20.13,
+      "eta": 0.6386,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8266,
+      "episode": 81,
+      "reward": 22.705,
+      "avg_reward_10": 19.966,
+      "eta": 0.6407,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8361,
+      "episode": 82,
+      "reward": 18.186,
+      "avg_reward_10": 19.626,
+      "eta": 0.6422,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8459,
+      "episode": 83,
+      "reward": 17.82,
+      "avg_reward_10": 19.745,
+      "eta": 0.6438,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8560,
+      "episode": 84,
+      "reward": 20.573,
+      "avg_reward_10": 19.763,
+      "eta": 0.6455,
+      "critic_loss": 0.26646286249160767,
+      "actor_loss": -3.6644225120544434
+    },
+    {
+      "step": 8648,
+      "episode": 85,
+      "reward": 19.253,
+      "avg_reward_10": 19.865,
+      "eta": 0.647,
+      "critic_loss": 0.1945643424987793,
+      "actor_loss": -3.725290298461914
+    },
+    {
+      "step": 8766,
+      "episode": 86,
+      "reward": 22.074,
+      "avg_reward_10": 20.324,
+      "eta": 0.6489,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8862,
+      "episode": 87,
+      "reward": 17.094,
+      "avg_reward_10": 20.018,
+      "eta": 0.6505,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 8989,
+      "episode": 88,
+      "reward": 20.358,
+      "avg_reward_10": 19.664,
+      "eta": 0.6525,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9094,
+      "episode": 89,
+      "reward": 22.662,
+      "avg_reward_10": 20.108,
+      "eta": 0.6542,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9199,
+      "episode": 90,
+      "reward": 19.88,
+      "avg_reward_10": 20.06,
+      "eta": 0.6559,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9315,
+      "episode": 91,
+      "reward": 16.197,
+      "avg_reward_10": 19.41,
+      "eta": 0.6578,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9421,
+      "episode": 92,
+      "reward": 20.619,
+      "avg_reward_10": 19.653,
+      "eta": 0.6596,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9520,
+      "episode": 93,
+      "reward": 20.631,
+      "avg_reward_10": 19.934,
+      "eta": 0.6612,
+      "critic_loss": 0.31626051664352417,
+      "actor_loss": -3.7848455905914307
+    },
+    {
+      "step": 9633,
+      "episode": 94,
+      "reward": 23.853,
+      "avg_reward_10": 20.262,
+      "eta": 0.663,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9729,
+      "episode": 95,
+      "reward": 19.945,
+      "avg_reward_10": 20.331,
+      "eta": 0.6645,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9821,
+      "episode": 96,
+      "reward": 18.483,
+      "avg_reward_10": 19.972,
+      "eta": 0.666,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 9912,
+      "episode": 97,
+      "reward": 18.595,
+      "avg_reward_10": 20.122,
+      "eta": 0.6675,
+      "critic_loss": 0.27674973011016846,
+      "actor_loss": -3.795361280441284
+    },
+    {
+      "step": 10006,
+      "episode": 98,
+      "reward": 14.629,
+      "avg_reward_10": 19.549,
+      "eta": 0.669,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10100,
+      "episode": 99,
+      "reward": 17.261,
+      "avg_reward_10": 19.009,
+      "eta": 0.6705,
+      "critic_loss": 0.613008975982666,
+      "actor_loss": -3.758227586746216
+    },
+    {
+      "step": 10227,
+      "episode": 100,
+      "reward": 24.689,
+      "avg_reward_10": 19.49,
+      "eta": 0.6725,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10343,
+      "episode": 101,
+      "reward": 20.528,
+      "avg_reward_10": 19.923,
+      "eta": 0.6744,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10473,
+      "episode": 102,
+      "reward": 23.328,
+      "avg_reward_10": 20.194,
+      "eta": 0.6765,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10581,
+      "episode": 103,
+      "reward": 16.753,
+      "avg_reward_10": 19.807,
+      "eta": 0.6782,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10691,
+      "episode": 104,
+      "reward": 21.289,
+      "avg_reward_10": 19.55,
+      "eta": 0.6799,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10769,
+      "episode": 105,
+      "reward": 19.679,
+      "avg_reward_10": 19.524,
+      "eta": 0.6812,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 10868,
+      "episode": 106,
+      "reward": 20.85,
+      "avg_reward_10": 19.76,
+      "eta": 0.6827,
+      "critic_loss": 0.3889414072036743,
+      "actor_loss": -3.716596841812134
+    },
+    {
+      "step": 10963,
+      "episode": 107,
+      "reward": 20.336,
+      "avg_reward_10": 19.934,
+      "eta": 0.6842,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11051,
+      "episode": 108,
+      "reward": 17.743,
+      "avg_reward_10": 20.246,
+      "eta": 0.6856,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11166,
+      "episode": 109,
+      "reward": 21.391,
+      "avg_reward_10": 20.659,
+      "eta": 0.6874,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11284,
+      "episode": 110,
+      "reward": 23.528,
+      "avg_reward_10": 20.543,
+      "eta": 0.6892,
+      "critic_loss": 0.3875651955604553,
+      "actor_loss": -3.769336462020874
+    },
+    {
+      "step": 11373,
+      "episode": 111,
+      "reward": 19.66,
+      "avg_reward_10": 20.456,
+      "eta": 0.6905,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11465,
+      "episode": 112,
+      "reward": 20.036,
+      "avg_reward_10": 20.127,
+      "eta": 0.6919,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11590,
+      "episode": 113,
+      "reward": 21.627,
+      "avg_reward_10": 20.614,
+      "eta": 0.6938,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11679,
+      "episode": 114,
+      "reward": 17.357,
+      "avg_reward_10": 20.221,
+      "eta": 0.6952,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11766,
+      "episode": 115,
+      "reward": 16.274,
+      "avg_reward_10": 19.88,
+      "eta": 0.6965,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11883,
+      "episode": 116,
+      "reward": 22.345,
+      "avg_reward_10": 20.03,
+      "eta": 0.6982,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 11990,
+      "episode": 117,
+      "reward": 19.885,
+      "avg_reward_10": 19.985,
+      "eta": 0.6999,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12073,
+      "episode": 118,
+      "reward": 17.224,
+      "avg_reward_10": 19.933,
+      "eta": 0.7011,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12179,
+      "episode": 119,
+      "reward": 19.083,
+      "avg_reward_10": 19.702,
+      "eta": 0.7027,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12268,
+      "episode": 120,
+      "reward": 19.202,
+      "avg_reward_10": 19.269,
+      "eta": 0.7041,
+      "critic_loss": 0.3725809156894684,
+      "actor_loss": -3.7718751430511475
+    },
+    {
+      "step": 12351,
+      "episode": 121,
+      "reward": 21.276,
+      "avg_reward_10": 19.431,
+      "eta": 0.7053,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12464,
+      "episode": 122,
+      "reward": 19.744,
+      "avg_reward_10": 19.402,
+      "eta": 0.707,
+      "critic_loss": 0.27083390951156616,
+      "actor_loss": -3.861837863922119
+    },
+    {
+      "step": 12555,
+      "episode": 123,
+      "reward": 12.846,
+      "avg_reward_10": 18.524,
+      "eta": 0.7083,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12653,
+      "episode": 124,
+      "reward": 20.635,
+      "avg_reward_10": 18.852,
+      "eta": 0.7097,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12749,
+      "episode": 125,
+      "reward": 16.003,
+      "avg_reward_10": 18.824,
+      "eta": 0.7111,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12843,
+      "episode": 126,
+      "reward": 21.21,
+      "avg_reward_10": 18.711,
+      "eta": 0.7125,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 12929,
+      "episode": 127,
+      "reward": 22.32,
+      "avg_reward_10": 18.954,
+      "eta": 0.7137,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13056,
+      "episode": 128,
+      "reward": 24.97,
+      "avg_reward_10": 19.729,
+      "eta": 0.7156,
+      "critic_loss": 0.40784409642219543,
+      "actor_loss": -3.9260404109954834
+    },
+    {
+      "step": 13173,
+      "episode": 129,
+      "reward": 21.787,
+      "avg_reward_10": 19.999,
+      "eta": 0.7172,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13284,
+      "episode": 130,
+      "reward": 24.707,
+      "avg_reward_10": 20.55,
+      "eta": 0.7188,
+      "critic_loss": 0.2725669741630554,
+      "actor_loss": -3.8336217403411865
+    },
+    {
+      "step": 13376,
+      "episode": 131,
+      "reward": 21.76,
+      "avg_reward_10": 20.598,
+      "eta": 0.7201,
+      "critic_loss": 0.15709775686264038,
+      "actor_loss": -3.9030566215515137
+    },
+    {
+      "step": 13514,
+      "episode": 132,
+      "reward": 23.634,
+      "avg_reward_10": 20.987,
+      "eta": 0.722,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13607,
+      "episode": 133,
+      "reward": 23.292,
+      "avg_reward_10": 22.032,
+      "eta": 0.7232,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13707,
+      "episode": 134,
+      "reward": 24.188,
+      "avg_reward_10": 22.387,
+      "eta": 0.7246,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13837,
+      "episode": 135,
+      "reward": 24.855,
+      "avg_reward_10": 23.272,
+      "eta": 0.7264,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 13927,
+      "episode": 136,
+      "reward": 17.838,
+      "avg_reward_10": 22.935,
+      "eta": 0.7276,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14012,
+      "episode": 137,
+      "reward": 18.452,
+      "avg_reward_10": 22.548,
+      "eta": 0.7288,
+      "critic_loss": 0.5141035914421082,
+      "actor_loss": -3.89745831489563
+    },
+    {
+      "step": 14151,
+      "episode": 138,
+      "reward": 24.367,
+      "avg_reward_10": 22.488,
+      "eta": 0.7307,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14228,
+      "episode": 139,
+      "reward": 21.925,
+      "avg_reward_10": 22.502,
+      "eta": 0.7318,
+      "critic_loss": 0.41399797797203064,
+      "actor_loss": -3.7838752269744873
+    },
+    {
+      "step": 14369,
+      "episode": 140,
+      "reward": 25.23,
+      "avg_reward_10": 22.554,
+      "eta": 0.7337,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14479,
+      "episode": 141,
+      "reward": 23.32,
+      "avg_reward_10": 22.71,
+      "eta": 0.7352,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14580,
+      "episode": 142,
+      "reward": 21.028,
+      "avg_reward_10": 22.449,
+      "eta": 0.7366,
+      "critic_loss": 0.6819360256195068,
+      "actor_loss": -3.7857964038848877
+    },
+    {
+      "step": 14671,
+      "episode": 143,
+      "reward": 20.786,
+      "avg_reward_10": 22.199,
+      "eta": 0.7378,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14764,
+      "episode": 144,
+      "reward": 19.555,
+      "avg_reward_10": 21.736,
+      "eta": 0.739,
+      "critic_loss": 0.4623321294784546,
+      "actor_loss": -3.912618398666382
+    },
+    {
+      "step": 14861,
+      "episode": 145,
+      "reward": 21.141,
+      "avg_reward_10": 21.364,
+      "eta": 0.7403,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 14944,
+      "episode": 146,
+      "reward": 14.731,
+      "avg_reward_10": 21.053,
+      "eta": 0.7415,
+      "critic_loss": 0.5368821620941162,
+      "actor_loss": -3.879851818084717
+    },
+    {
+      "step": 15059,
+      "episode": 147,
+      "reward": 24.96,
+      "avg_reward_10": 21.704,
+      "eta": 0.7429,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15153,
+      "episode": 148,
+      "reward": 16.402,
+      "avg_reward_10": 20.908,
+      "eta": 0.7442,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15288,
+      "episode": 149,
+      "reward": 22.097,
+      "avg_reward_10": 20.925,
+      "eta": 0.746,
+      "critic_loss": 0.5909380912780762,
+      "actor_loss": -3.9492242336273193
+    },
+    {
+      "step": 15392,
+      "episode": 150,
+      "reward": 19.61,
+      "avg_reward_10": 20.363,
+      "eta": 0.7473,
+      "critic_loss": 0.3193509578704834,
+      "actor_loss": -3.9412338733673096
+    },
+    {
+      "step": 15497,
+      "episode": 151,
+      "reward": 21.888,
+      "avg_reward_10": 20.22,
+      "eta": 0.7487,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15578,
+      "episode": 152,
+      "reward": 17.164,
+      "avg_reward_10": 19.833,
+      "eta": 0.7497,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15713,
+      "episode": 153,
+      "reward": 22.24,
+      "avg_reward_10": 19.979,
+      "eta": 0.7515,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15807,
+      "episode": 154,
+      "reward": 18.376,
+      "avg_reward_10": 19.861,
+      "eta": 0.7526,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 15904,
+      "episode": 155,
+      "reward": 22.017,
+      "avg_reward_10": 19.949,
+      "eta": 0.7539,
+      "critic_loss": 0.387455552816391,
+      "actor_loss": -3.8114821910858154
+    },
+    {
+      "step": 16015,
+      "episode": 156,
+      "reward": 21.833,
+      "avg_reward_10": 20.659,
+      "eta": 0.7553,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16120,
+      "episode": 157,
+      "reward": 20.14,
+      "avg_reward_10": 20.177,
+      "eta": 0.7566,
+      "critic_loss": 0.3895318806171417,
+      "actor_loss": -3.8780713081359863
+    },
+    {
+      "step": 16207,
+      "episode": 158,
+      "reward": 20.192,
+      "avg_reward_10": 20.556,
+      "eta": 0.7577,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16319,
+      "episode": 159,
+      "reward": 20.466,
+      "avg_reward_10": 20.393,
+      "eta": 0.7591,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16404,
+      "episode": 160,
+      "reward": 24.212,
+      "avg_reward_10": 20.853,
+      "eta": 0.7602,
+      "critic_loss": 0.37954089045524597,
+      "actor_loss": -3.8843979835510254
+    },
+    {
+      "step": 16503,
+      "episode": 161,
+      "reward": 19.89,
+      "avg_reward_10": 20.653,
+      "eta": 0.7613,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16590,
+      "episode": 162,
+      "reward": 19.936,
+      "avg_reward_10": 20.93,
+      "eta": 0.7624,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16681,
+      "episode": 163,
+      "reward": 19.856,
+      "avg_reward_10": 20.692,
+      "eta": 0.7635,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16777,
+      "episode": 164,
+      "reward": 23.024,
+      "avg_reward_10": 21.157,
+      "eta": 0.7647,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16882,
+      "episode": 165,
+      "reward": 23.471,
+      "avg_reward_10": 21.302,
+      "eta": 0.766,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 16970,
+      "episode": 166,
+      "reward": 17.482,
+      "avg_reward_10": 20.867,
+      "eta": 0.7671,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17066,
+      "episode": 167,
+      "reward": 15.234,
+      "avg_reward_10": 20.376,
+      "eta": 0.7682,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17182,
+      "episode": 168,
+      "reward": 23.795,
+      "avg_reward_10": 20.737,
+      "eta": 0.7696,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17285,
+      "episode": 169,
+      "reward": 19.869,
+      "avg_reward_10": 20.677,
+      "eta": 0.7708,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17414,
+      "episode": 170,
+      "reward": 24.974,
+      "avg_reward_10": 20.753,
+      "eta": 0.7724,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17524,
+      "episode": 171,
+      "reward": 24.758,
+      "avg_reward_10": 21.24,
+      "eta": 0.7737,
+      "critic_loss": 0.4938502311706543,
+      "actor_loss": -3.9424095153808594
+    },
+    {
+      "step": 17619,
+      "episode": 172,
+      "reward": 16.659,
+      "avg_reward_10": 20.912,
+      "eta": 0.7748,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17709,
+      "episode": 173,
+      "reward": 21.247,
+      "avg_reward_10": 21.051,
+      "eta": 0.7759,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17801,
+      "episode": 174,
+      "reward": 20.046,
+      "avg_reward_10": 20.754,
+      "eta": 0.777,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 17885,
+      "episode": 175,
+      "reward": 19.508,
+      "avg_reward_10": 20.357,
+      "eta": 0.778,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 18000,
+      "episode": 176,
+      "reward": 22.046,
+      "avg_reward_10": 20.814,
+      "eta": 0.7793,
+      "critic_loss": 0.5608545541763306,
+      "actor_loss": -3.8669917583465576
+    },
+    {
+      "step": 18128,
+      "episode": 177,
+      "reward": 24.564,
+      "avg_reward_10": 21.747,
+      "eta": 0.7808,
+      "critic_loss": 0.32488375902175903,
+      "actor_loss": -3.802070379257202
+    },
+    {
+      "step": 18223,
+      "episode": 178,
+      "reward": 17.709,
+      "avg_reward_10": 21.138,
+      "eta": 0.7818,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 18302,
+      "episode": 179,
+      "reward": 20.116,
+      "avg_reward_10": 21.163,
+      "eta": 0.7827,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 18404,
+      "episode": 180,
+      "reward": 20.957,
+      "avg_reward_10": 20.761,
+      "eta": 0.7839,
+      "critic_loss": 0.47128409147262573,
+      "actor_loss": -4.093672275543213
+    },
+    {
+      "step": 18516,
+      "episode": 181,
+      "reward": 22.468,
+      "avg_reward_10": 20.532,
+      "eta": 0.7852,
+      "critic_loss": 0.26631778478622437,
+      "actor_loss": -3.8167812824249268
+    },
+    {
+      "step": 18618,
+      "episode": 182,
+      "reward": 22.383,
+      "avg_reward_10": 21.105,
+      "eta": 0.7863,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 18696,
+      "episode": 183,
+      "reward": 18.248,
+      "avg_reward_10": 20.805,
+      "eta": 0.7872,
+      "critic_loss": 0.27758437395095825,
+      "actor_loss": -3.7546234130859375
+    },
+    {
+      "step": 18787,
+      "episode": 184,
+      "reward": 17.344,
+      "avg_reward_10": 20.534,
+      "eta": 0.7882,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 18884,
+      "episode": 185,
+      "reward": 19.553,
+      "avg_reward_10": 20.539,
+      "eta": 0.7893,
+      "critic_loss": 0.3521602153778076,
+      "actor_loss": -3.944420099258423
+    },
+    {
+      "step": 18989,
+      "episode": 186,
+      "reward": 22.553,
+      "avg_reward_10": 20.59,
+      "eta": 0.7905,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19110,
+      "episode": 187,
+      "reward": 23.395,
+      "avg_reward_10": 20.473,
+      "eta": 0.7918,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19204,
+      "episode": 188,
+      "reward": 20.05,
+      "avg_reward_10": 20.707,
+      "eta": 0.7929,
+      "critic_loss": 0.5599280595779419,
+      "actor_loss": -3.9183428287506104
+    },
+    {
+      "step": 19330,
+      "episode": 189,
+      "reward": 23.265,
+      "avg_reward_10": 21.022,
+      "eta": 0.7942,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19458,
+      "episode": 190,
+      "reward": 23.852,
+      "avg_reward_10": 21.311,
+      "eta": 0.7956,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19600,
+      "episode": 191,
+      "reward": 23.695,
+      "avg_reward_10": 21.434,
+      "eta": 0.7972,
+      "critic_loss": 0.5550546646118164,
+      "actor_loss": -3.85225772857666
+    },
+    {
+      "step": 19692,
+      "episode": 192,
+      "reward": 13.895,
+      "avg_reward_10": 20.585,
+      "eta": 0.7982,
+      "critic_loss": 0.45033785700798035,
+      "actor_loss": -3.836864709854126
+    },
+    {
+      "step": 19789,
+      "episode": 193,
+      "reward": 21.878,
+      "avg_reward_10": 20.948,
+      "eta": 0.7992,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19889,
+      "episode": 194,
+      "reward": 18.36,
+      "avg_reward_10": 21.05,
+      "eta": 0.8002,
+      "critic_loss": 0.0,
+      "actor_loss": 0.0
+    },
+    {
+      "step": 19980,
+      "episode": 195,
+      "reward": 20.43,
+      "avg_reward_10": 21.137,
+      "eta": 0.8012,
+      "critic_loss": 0.1753464788198471,
+      "actor_loss": -3.8906240463256836
+    }
+  ]
+}
